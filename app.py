@@ -142,16 +142,12 @@ def play_audio(audio_segment):
     st.audio(audio_buffer)
 
 st.set_page_config(page_title="Music Genre Classifier", layout="wide")
-st.title("Advanced Music Genre Classifier with Speed Control")
+st.markdown("<h1 style='text-align: center;'>Music Classifier - <span style='color: blue;'>AI Powered</span></h1>", unsafe_allow_html=True)
 st.session_state.prediction_mode = st.selectbox("Choose a Prediction Model", ["Select Prediction Model", "Simple", "AI Predicted"])
 
 if st.session_state.prediction_mode and st.session_state.prediction_mode != "Select Prediction Model":
     SAMPLE_DIR = 'SAMPLE'
-    audio_files = []
-    for genre in os.listdir(SAMPLE_DIR):
-        genre_path = os.path.join(SAMPLE_DIR, genre)
-        if os.path.isdir(genre_path):
-            audio_files.extend([os.path.join(genre_path, f) for f in os.listdir(genre_path) if f.endswith(('mp3', 'wav', 'ogg'))])
+    audio_files = [os.path.join(SAMPLE_DIR, f) for f in os.listdir(SAMPLE_DIR) if f.endswith(('mp3', 'wav', 'ogg'))]
 
     selected_file = st.selectbox("Select a music file", ["Choose audio first"] + audio_files)
 
@@ -170,8 +166,6 @@ if st.session_state.prediction_mode and st.session_state.prediction_mode != "Sel
             modified_audio = change_audio_speed(audio_data, speed=speed)
             st.write(f"Audio at {speed}x speed:")
             play_audio(modified_audio)
-
-            st.write("Analyzing audio for genre prediction...")
             y, sr = process_audio(selected_file)
             st.session_state.y = y  
             st.session_state.sr = sr  
@@ -200,6 +194,6 @@ st.markdown("""
         }
     </style>
     <footer>
-        <p>© 2024 by Febriansah Dirgantara. All rights reserved.</p>
+        <p>© 2024 - Febriansah Dirgantara. All rights reserved.</p>
     </footer>
 """, unsafe_allow_html=True)
