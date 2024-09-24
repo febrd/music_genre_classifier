@@ -38,14 +38,10 @@ The following libraries are used in this project:
    cd music-genre-classifier
    ```
 
-2. Install the required libraries:
+2. Run & Install the required libraries:
    ```bash
-   pip install streamlit librosa plotly pydub torch transformers
-   ```
-
-3. Run the Streamlit application:
-   ```bash
-   streamlit run app.py
+   chmod +x init.sh
+   ./init.sh
    ```
 
 4. Open the application in your web browser at `http://localhost:8501`.
