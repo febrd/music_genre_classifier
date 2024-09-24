@@ -1,0 +1,9 @@
+streamlit
+librosa
+numpy
+plotly
+pydub
+transformers
+tensorflow
+tensorflow-hub
+torch
