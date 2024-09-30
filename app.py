@@ -62,8 +62,6 @@ def extract_audio_features(y):
     
     return features
 
-
-
 def predict_genre(features, mode='simple'):
     if mode == 'simple':
         conditions = [
@@ -111,11 +109,11 @@ def process_audio(file):
         return None, None  
 
     try:  
-        y, sr = librosa.load(wav_file, sr=16000)  # Use a consistent sample rate
+        y, sr = librosa.load(wav_file)
 
-        num_samples = 2000  
-        if len(y) > num_samples:
-            y = y[::len(y) // num_samples]  
+       # num_samples = 4000  
+       #  if len(y) > num_samples:
+       #     y = y[::len(y) // num_samples]  
 
         fig = go.Figure()
         fig.add_trace(go.Scatter(x=np.linspace(0, len(y)/sr, num=len(y)), y=y, mode='lines', name='Waveform'))
