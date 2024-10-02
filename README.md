@@ -12,7 +12,7 @@ This project implements a music genre classification application using Streamlit
 ## Overview
 
 The Music Genre Classifier is a Streamlit application that allows users to:
-1. Upload audio files in various formats (MP3, WAV, OGG).
+1. Upload audio files in approved formats (MP3).
 2. Select a prediction mode (simple rules-based or AI-based).
 3. Visualize the audio waveform.
 4. Modify playback speed and listen to the audio.
