@@ -34,8 +34,8 @@ The following libraries are used in this project:
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/yourusername/music-genre-classifier.git
-   cd music-genre-classifier
+   git clone https://github.com/febrd/music_genre_classifier.git
+   cd music_genre_classifier
    ```
 
 2. Run & Install the required libraries:
